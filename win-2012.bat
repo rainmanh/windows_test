@@ -14,6 +14,9 @@ netsh advfirewall firewall add rule name="All ICMP V4" dir=in action=allow proto
 
 netsh advfirewall firewall set rule group="remote desktop" new enable=Yes
 
+netsh advfirewall firewall set rule group="remote desktop" new enable=Yes
+
+netsh advfirewall firewall add rule name=”KMS” dir=in action=allow protocol=tcp localport=1688
 
 net stop wuauserv
 
