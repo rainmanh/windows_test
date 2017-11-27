@@ -41,5 +41,7 @@ if exist %SystemRoot%\System32\reg.exe (
   @if errorlevel 1 echo ==^> WARNING: Error %ERRORLEVEL%  was returned by: reg ADD LastLoggedOnUser and UserSwitch
 )
 
+%SystemRoot%\System32\reg.exe  ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /V "Disable cloudbase-init process" /t REG_SZ /F /D "C:\Windows\SysWOW64\cmd /c sc config cloudbase-init start= disabled"
+
 ::https://gist.githubusercontent.com/rainmanh/f8adaadc7a542d95330970cd33be1cd6/raw/b6d28494145a372e70780aff497157903ee45c0a/CloudbaseInitSetup_0_9_11_x64.msi
 ::
